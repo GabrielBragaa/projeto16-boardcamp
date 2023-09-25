@@ -2,7 +2,7 @@ import dayjs from "dayjs";
 import { db } from "../database/database.connection.js";
 
 
-export async function getRents(req, res) {
+export async function getAluguel(req, res) {
     try {
 
         const rentals = await db.query(
@@ -23,7 +23,7 @@ export async function getRents(req, res) {
     }
 }
 
-export async function newRent(req, res) {
+export async function novoAluguel(req, res) {
     const { gameId, customerId, daysRented } = req.body;
     
     try {
@@ -60,7 +60,7 @@ export async function newRent(req, res) {
     }
 }
 
-export async function finishRent(req, res) {
+export async function fimAluguel(req, res) {
     const { id } = req.params;
     const day = dayjs().format('YYYY-MM-DD');
 
@@ -89,7 +89,7 @@ export async function finishRent(req, res) {
     }
 }
 
-export async function deleteRent(req, res) {
+export async function deleteAluguel(req, res) {
     const { id } = req.params;
 
     try {

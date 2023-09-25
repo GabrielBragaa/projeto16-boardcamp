@@ -1,6 +1,6 @@
 import joi from "joi";
 
-export const gamesSchema = joi.object({
+export const jogosSchema = joi.object({
     name: joi.string().trim().required(),
     image: joi.string().trim().required(),
     stockTotal: joi.number().integer().greater(0),

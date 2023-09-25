@@ -1,7 +1,7 @@
 import { Router } from "express";
-import clientsRouter from "./clients.routes.js";
-import gamesRouter from "./games.routes.js";
-import rentsRouter from "./rents.routes.js";
+import clientsRouter from "./clientes.routes.js";
+import gamesRouter from "./jogos.routes.js";
+import rentsRouter from "./aluguel.routes.js";
 
 const router = Router();
 

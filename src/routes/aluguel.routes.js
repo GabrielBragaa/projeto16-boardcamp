@@ -1,13 +1,13 @@
 import { Router } from "express";
-import { deleteRent, finishRent, getRents, newRent } from "../controllers/rents.controllers.js";
-import { validateSchema } from "../middlewares/validateSchema.middleware.js";
-import { rentsSchema } from "../schemas/rents.schemas.js";
+import { deleteAluguel, fimAluguel, getAluguel, novoAluguel } from "../controllers/aluguel.controllers.js";
+import { validaSchema } from "../middlewares/validacao.middleware.js";
+import { aluguelSchema } from "../schemas/aluguel.schemas.js";
 
 const rentsRouter = Router();
 
-rentsRouter.get('/rentals', getRents);
-rentsRouter.post('/rentals', validateSchema(rentsSchema) , newRent);
-rentsRouter.post('/rentals/:id/return', finishRent);
-rentsRouter.delete('/rentals/:id', deleteRent);
+rentsRouter.get('/rentals', getAluguel);
+rentsRouter.post('/rentals', validaSchema(aluguelSchema) , novoAluguel);
+rentsRouter.post('/rentals/:id/return', fimAluguel);
+rentsRouter.delete('/rentals/:id', deleteAluguel);
 
 export default rentsRouter;

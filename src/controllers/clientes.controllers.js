@@ -1,7 +1,7 @@
 import { db } from "../database/database.connection.js";
 
 
-export async function getCustomers(req, res) {
+export async function getClientes(req, res) {
     try {
 
         const customers = await db.query(
@@ -15,7 +15,7 @@ export async function getCustomers(req, res) {
     }
 }
 
-export async function getCustomerById(req, res) {
+export async function getClienteID(req, res) {
     const { id } = req.params;
 
     try {
@@ -33,7 +33,7 @@ export async function getCustomerById(req, res) {
     }
 }
 
-export async function newCustomer(req, res) {
+export async function novoCliente(req, res) {
     const { name, phone, cpf, birthday } = req.body;
 
     try {
@@ -55,7 +55,7 @@ export async function newCustomer(req, res) {
     }
 }
 
-export async function updateCustomer(req, res) {
+export async function atualizaCliente(req, res) {
     const { id } = req.params;
     const { name, phone, cpf, birthday } = req.body;
 

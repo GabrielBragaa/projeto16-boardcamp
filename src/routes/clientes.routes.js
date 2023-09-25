@@ -1,14 +1,14 @@
 import { Router } from "express";
-import { getCustomerById, getCustomers, newCustomer, updateCustomer } from "../controllers/clients.controllers.js";
-import { validateSchema } from "../middlewares/validateSchema.middleware.js";
-import { clientsSchema } from "../schemas/clients.schemas.js";
+import { getClienteID, getClientes, novoCliente, atualizaCliente } from "../controllers/clientes.controllers.js";
+import { validaSchema } from "../middlewares/validacao.middleware.js";
+import { clientesSchema } from "../schemas/clientes.schemas.js";
 
 
 const clientsRouter = Router();
 
-clientsRouter.get('/customers', getCustomers);
-clientsRouter.get('/customers/:id', getCustomerById);
-clientsRouter.post('/customers', validateSchema(clientsSchema) , newCustomer);
-clientsRouter.put('/customers/:id', validateSchema(clientsSchema), updateCustomer);
+clientsRouter.get('/customers', getClientes);
+clientsRouter.get('/customers/:id', getClienteID);
+clientsRouter.post('/customers', validaSchema(clientesSchema) , novoCliente);
+clientsRouter.put('/customers/:id', validaSchema(clientesSchema), atualizaCliente);
 
 export default clientsRouter;
