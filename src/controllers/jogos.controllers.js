@@ -1,6 +1,6 @@
 import { db } from "../database/database.connection.js";
 
-export async function getGames(req, res) {
+export async function getJogos(req, res) {
     try {
 
         const games = await db.query(
@@ -14,7 +14,7 @@ export async function getGames(req, res) {
     }
 }
 
-export async function newGame(req, res) {
+export async function novoJogo(req, res) {
     const { name, image, stockTotal, pricePerDay } = req.body;
 
     try {
